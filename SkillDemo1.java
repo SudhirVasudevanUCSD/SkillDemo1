@@ -14,11 +14,13 @@ public class SkillDemo1 {
   public static int addDigits(String contents) {
       int sum = 0;
       for(int i = 0; i < contents.length(); i++){
-           if(i == contents.length()-1){
-               sum += Integer.parseInt(contents.substring(i));
-           } else {
-               sum += Integer.parseInt(contents.substring(i, i + 1));
-           }
+          if(contents.charAt(i) <= 57 && contents.charAt(i) >= 48) {
+              if (i == contents.length() - 1) {
+                  sum += Integer.parseInt(contents.substring(i));
+              } else {
+                  sum += Integer.parseInt(contents.substring(i, i + 1));
+              }
+          }
       }
       return sum;
   }
